@@ -1,20 +1,18 @@
 import React from 'react';
-import cx from 'classnames';
 
 import Card from '../card/Card';
 import ImageFallback from '../imageFallback/ImageFallback';
+import Stars from '../stars/Stars'
 
 import styles from './CardService.module.scss';
 
 function CardService({
   provider,
-  className,
 }) {
   const { first_name, last_name, email, phone, rate, pictures } = provider;
   const [picture] = pictures;
-  const hasPicture = !!picture?.url;
   return (
-    <Card className={cx(styles.card, className)}>
+    <Card className={styles.card}>
       <ImageFallback
         className={styles.img}
         src={picture?.url}
@@ -28,7 +26,7 @@ function CardService({
         <div>{last_name}</div>
         <div>{email}</div>
         <div>{phone}</div>
-        <div>{rate}</div>
+        <Stars rating={rate} />
       </div>
     </Card>
   )

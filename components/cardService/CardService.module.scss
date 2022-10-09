@@ -1,3 +1,17 @@
+@import './mixins.scss';
+
 .card {
-  // height: 500px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  @include viewport(tablet) {
+    gap: 30px;
+  }
+}
+
+.img {
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
 }
