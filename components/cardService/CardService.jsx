@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import Card from '../card/Card';
-import Image from '../image/Image';
+import ImageFallback from '../imageFallback/ImageFallback';
 
 import styles from './CardService.module.scss';
 
@@ -15,16 +15,14 @@ function CardService({
   const hasPicture = !!picture?.url;
   return (
     <Card className={cx(styles.card, className)}>
-      {hasPicture && (
-        <Image
-          className={styles.img}
-          src={picture.url}
-          layout='intrinsic'
-          alt='perfil'
-          width='200'
-          height='200'
-          objectFit='cover'/>
-      )}
+      <ImageFallback
+        className={styles.img}
+        src={picture?.url}
+        layout='intrinsic'
+        alt='perfil'
+        width='200'
+        height='200'
+        objectFit='cover'/>
       <div className={styles.text}>
         <strong>{first_name}</strong>
         <div>{last_name}</div>
