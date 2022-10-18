@@ -7,7 +7,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['s3.us-west-2.amazonaws.com'],
+    domains: ['s3.us-west-2.amazonaws.com', `images.pexels.com`],
   },
 }
 

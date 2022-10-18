@@ -16,7 +16,10 @@ function toDate(item) {
 }
 
 function toFiles(item) {
-  return item.files.map(obj => obj?.file);
+  return item.files.map(obj => {
+    const response = obj?.file ? obj?.file : obj?.external;
+    return response;
+  });
 }
 
 const formaterMap = {
