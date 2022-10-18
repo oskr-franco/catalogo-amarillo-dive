@@ -1,4 +1,5 @@
 import React from 'react';
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import CardService from '../cardService/CardService';
 

@@ -1,12 +1,14 @@
 import Image from 'next/image';
 
-import getFreelancers from './api/freelance';
+import getFreelancers from './api/[pageSize]';
 
 import ServiceProviders from '../components/serviceProviders/ServiceProviders';
 
 import styles from '../styles/Home.module.scss';
 
-function Home({serviceProviders}) {
+function Home({data}) {
+  const { data: serviceProviders } = data;
+
   return (
     <main className={styles.main} >
       <div className={styles.side} ></div>
@@ -17,10 +19,12 @@ function Home({serviceProviders}) {
 }
 
 export async function getServerSideProps() {
-  const freelancers = await getFreelancers();
+  const query = { pageSize: 10};
+  const req = {query: query};
+  const data = await getFreelancers(req);
   return {
     props: {
-        serviceProviders: freelancers,
+        data: data,
       },
   }
 }
