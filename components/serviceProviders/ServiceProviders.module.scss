@@ -9,12 +9,12 @@
 
 .infiniteScroll {
   padding: 10px;
-}
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
 
-.card {
-  margin-bottom: 20px;
-
-  @include viewport(tablet) {
-    margin-bottom: 30px;
+  @include viewport(desktop) {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
   }
 }

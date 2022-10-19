@@ -24,7 +24,6 @@ export const getFreelancers = async(pageSize, nextCursor) => {
 
 const fetchFreelancers = async (req, res) => {
   const { pageSize, nextCursor} = req?.query || {};
-  console.log(pageSize, nextCursor);
   const response = await getFreelancers(Number(pageSize),nextCursor );
   res.status(200).json(response);
 

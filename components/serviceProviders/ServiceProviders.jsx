@@ -33,7 +33,6 @@ function ServiceProviders({ data }) {
       >
         { providers.map(provider => (
           <CardService
-            className={styles.card} 
             key={provider.email}
             provider={provider}
           />
