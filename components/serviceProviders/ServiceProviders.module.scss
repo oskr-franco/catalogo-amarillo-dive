@@ -3,10 +3,18 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  padding: 0 10px;
   width: 100%;
+}
+
+.infiniteScroll {
+  padding: 10px;
+}
+
+.card {
+  margin-bottom: 20px;
 
   @include viewport(tablet) {
-    gap: 30px;
+    margin-bottom: 30px;
   }
 }

@@ -25,13 +25,18 @@ function ServiceProviders({ data }) {
   return(
     <div className={styles.container}>
       <InfiniteScroll
+        className={styles.infiniteScroll}
         dataLength={providers.length}
         next={getMorePost}
         hasMore={hasMore}
         loader={<h3> Loading...</h3>}
       >
         { providers.map(provider => (
-          <CardService key={provider.email} provider={provider} />
+          <CardService
+            className={styles.card} 
+            key={provider.email}
+            provider={provider}
+          />
         ))}
       </InfiniteScroll>
     </div>
