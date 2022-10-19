@@ -1,27 +1,24 @@
-import Image from 'next/image';
-
-import getFreelancers from './api/[pageSize]';
+import { getFreelancers } from './api/freelancer';
 
 import ServiceProviders from '../components/serviceProviders/ServiceProviders';
 
 import styles from '../styles/Home.module.scss';
 
 function Home({data}) {
-  const { data: serviceProviders } = data;
+  // const { data: serviceProviders } = data;
 
   return (
     <main className={styles.main} >
       <div className={styles.side} ></div>
-      <ServiceProviders providers={serviceProviders}/>
+      <ServiceProviders data={data}/>
       <div className={styles.side}></div>
     </main>
   )
 }
 
 export async function getServerSideProps() {
-  const query = { pageSize: 10};
-  const req = {query: query};
-  const data = await getFreelancers(req);
+  const data = await getFreelancers();
+
   return {
     props: {
         data: data,
