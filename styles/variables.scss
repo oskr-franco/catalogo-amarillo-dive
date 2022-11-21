@@ -10,7 +10,23 @@ $xl: $extra-large;
 $extra-extra-large: 1400px;
 $xxl: $extra-extra-large;
 
+//Spacing
+$spacing: 8px;
+$desktop-spacing: 12px;
+
 //Colors
 $black-color: #333333;
 $black-light-color: #CCCCCC;
 $white-color: #F2F2F2;
+$blue-color: #4AA4DC;
+$purple-color: #7755D7;
+$yellow-color: #FFFF54;
+
+//Pallet
+$primary-color: $blue-color;
+$secondary-color: $purple-color;
+$logo-color: $yellow-color;
+$background-color: $white-color;
+$shadow-color: $black-light-color;
+$border-color: $primary-color;
+$button-color: $primary-color;

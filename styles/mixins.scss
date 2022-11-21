@@ -26,14 +26,14 @@
 }
 
 @mixin padding() {
-  padding: 8px;
+  padding: $spacing;
 
   @include viewport(tablet) {
-    padding: 12px;
+    padding: $desktop-spacing;
   }
 }
 
-@mixin card($inclidePadding: true, $shadowColor: $black-light-color) {
+@mixin card($inclidePadding: true, $shadowColor: $shadow-color) {
   border-radius: 10px;
   box-shadow:  4px 4px 8px 0 $shadowColor;
   width: 100%;
@@ -41,6 +41,22 @@
   @if $inclidePadding {
     @include padding();
   }
+}
+
+@mixin pill() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+@mixin button() {
+  background: $button-color;
+  border-radius: 10px;
+  color: $white-color;
+  padding: 5px 10px;
 }
 
 

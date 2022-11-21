@@ -21,14 +21,14 @@ function Stars({rating}) {
 
   
   return (
-    <>
+    <div className={styles.stars}>
       {fullStars}
       {isDecimal && (
         <FaStarHalfAlt 
           className={styles.star}/>
         )}
       {emptyStars}
-    </>
+    </div>
   )
 }
 export default Stars;

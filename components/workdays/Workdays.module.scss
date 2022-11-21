@@ -1,0 +1,11 @@
+@import './mixins.scss';
+
+.workdays {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  @include viewport(tablet){
+    flex-direction: row;
+  }
+}
