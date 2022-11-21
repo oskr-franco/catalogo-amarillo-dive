@@ -4,6 +4,7 @@ import cx from 'classnames';
 import Card from '../card/Card';
 import ImageFallback from '../imageFallback/ImageFallback';
 import Stars from '../stars/Stars'
+import CircularProgressBar from '../circularProgressBar/CircularProgressBar'
 import Workdays from '../workdays/Workdays'
 
 import styles from './CardService.module.scss';
@@ -32,11 +33,13 @@ function CardService({
     pictures,
   } = provider;
 
+  const [picture] = pictures;
   const stringLanguages = languages.map((language)=> LANGUAGES[language.name]).join(', ')
   const additionalService = plus_service? plus_service : 'N/A';
   const insurance = !!work_insurance.lenght ? 'Yes' : 'No';
   const legalWorkProof = !!legal_work_proof.lenght ? 'Yes' : 'No';
-  const [picture] = pictures;
+  const percentage = rate * 100 / 5 ;
+
   return (
     <Card className={cx(styles.card, className)}>
       <ImageFallback
@@ -64,6 +67,11 @@ function CardService({
       </div>
       <div className={styles.secondary}>
         <Stars rating={rate} />
+        <CircularProgressBar
+          className={styles.rate}
+          percentage={percentage}
+          strokeWidth="40"
+        />
         <Workdays className={styles.workdays} workdays={work_days} />
       </div>
     </Card>

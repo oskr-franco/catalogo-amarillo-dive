@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.circleBackground,
+.circleProgress {
+  fill: none;
+}
+
+.circleBackground {
+  stroke: #ddd;
+}
+
+.circleProgress {
+  stroke: $secondary-color;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.circleText {
+  font-size: 3em;
+  font-weight: bold;
+  fill: $secondary-color;
+}
