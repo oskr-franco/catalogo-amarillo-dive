@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import Header from '../components/header/Header'
+
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -8,7 +10,12 @@ function MyApp({ Component, pageProps }) {
     <meta name="description" content="Find the service exactly as you need" />
     <link rel="icon" href="/favicon.ico" />
   </Head>
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Header />
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
