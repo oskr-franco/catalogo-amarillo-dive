@@ -32,7 +32,7 @@
 }
 
 .secondary {
-  align-items: end;
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
   grid-area: secondary;
@@ -64,11 +64,6 @@
   @include viewport(tablet) {
     gap: $desktop-spacing;
   }
-}
-
-.rate {
-  width: 30px;
-  height: 30px;
 }
 
 .workdays {

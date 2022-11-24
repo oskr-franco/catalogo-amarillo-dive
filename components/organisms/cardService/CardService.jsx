@@ -1,11 +1,11 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Card from '../card/Card';
-import ImageFallback from '../imageFallback/ImageFallback';
-import Stars from '../stars/Stars'
-import CircularProgressBar from '../circularProgressBar/CircularProgressBar'
-import Workdays from '../workdays/Workdays'
+import Card from '../../atoms/card/Card';
+import ImageFallback from '../../atoms/imageFallback/ImageFallback';
+import Stars from '../../atoms/stars/Stars';
+import Rating from '../../molecules/rating/Rating';
+import Workdays from '../../molecules/workdays/Workdays';
 
 import styles from './CardService.module.scss';
 
@@ -67,11 +67,7 @@ function CardService({
       </div>
       <div className={styles.secondary}>
         <Stars rating={rate} />
-        <CircularProgressBar
-          className={styles.rate}
-          percentage={percentage}
-          strokeWidth="40"
-        />
+        <Rating rate={rate}/>
         <Workdays className={styles.workdays} workdays={work_days} />
       </div>
     </Card>

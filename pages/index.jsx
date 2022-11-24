@@ -1,7 +1,7 @@
 import { getFreelancers } from './api/freelancer';
 
-import ServiceProviders from '../components/serviceProviders/ServiceProviders';
-import Filter from '../components/filter/Filter';
+import ServiceProviders from '../components/organisms/serviceProviders/ServiceProviders';
+import Filter from '../components/organisms/filter/Filter';
 
 import styles from '../styles/Home.module.scss';
 
