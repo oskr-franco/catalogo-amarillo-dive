@@ -1,15 +1,15 @@
 @import './mixins.scss';
 
-.main {
+.pills {
   display: flex;
   flex-direction: row;
-}
+  gap: $spacing;
 
-.side {
-  width: 20%;
-  display: none;
+  .pill {
+    @include pill;
+  }
 
   @include viewport(tablet) {
-    display: block;
+    gap: $desktop-spacing;
   }
 }

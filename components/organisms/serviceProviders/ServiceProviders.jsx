@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import CardService from '../cardService/CardService';
+import CardServiceSummary from '../../organisms/cardServiceSummary/CardServiceSummary';
 
 import styles from './ServiceProviders.module.scss';
 
@@ -32,7 +32,7 @@ function ServiceProviders({ data }) {
         loader={<h3> Loading...</h3>}
       >
         { providers.map(provider => (
-          <CardService
+          <CardServiceSummary
             key={provider.email}
             provider={provider}
           />

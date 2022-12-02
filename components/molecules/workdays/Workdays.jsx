@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Workday from '../workday/Workday'
+import Workday from '../../atoms/workday/Workday'
 
 import styles from './Workdays.module.scss';
 

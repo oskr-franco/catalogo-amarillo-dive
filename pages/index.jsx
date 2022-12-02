@@ -15,7 +15,7 @@ function Home({data}) {
       <div className={styles.side}></div>
     </main>
     </>
-  )
+  );
 }
 
 export async function getServerSideProps() {

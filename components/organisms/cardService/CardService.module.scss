@@ -38,20 +38,6 @@
   grid-area: secondary;
 }
 
-.pills {
-  display: flex;
-  flex-direction: row;
-  gap: $spacing;
-
-  .pill {
-    @include pill;
-  }
-
-  @include viewport(tablet) {
-    gap: $desktop-spacing;
-  }
-}
-
 .buttons {
   display: flex;
   flex-direction: row;

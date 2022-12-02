@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 
 import Card from '../../atoms/card/Card';
+import Pills from '../../atoms/pills/Pills';
 import ImageFallback from '../../atoms/imageFallback/ImageFallback';
 import Stars from '../../atoms/stars/Stars';
 import Rating from '../../molecules/rating/Rating';
@@ -38,7 +39,6 @@ function CardService({
   const additionalService = plus_service? plus_service : 'N/A';
   const insurance = !!work_insurance.lenght ? 'Yes' : 'No';
   const legalWorkProof = !!legal_work_proof.lenght ? 'Yes' : 'No';
-  const percentage = rate * 100 / 5 ;
 
   return (
     <Card className={cx(styles.card, className)}>
@@ -53,9 +53,7 @@ function CardService({
       <div className={styles.primary}>
         <strong>{first_name} {last_name}</strong>
         <address>{location}</address>
-        <div className={styles.pills}>
-          {certifications.map((cert)=> (<div className={styles.pill} key={cert.id}>{cert.name}</div>))}
-        </div>
+        <Pills items={certifications} />
         <div>Languages: {stringLanguages}</div>
         <div>Additional Services: {additionalService}</div>
         <div>Insurance: {insurance}</div>
@@ -71,7 +69,7 @@ function CardService({
         <Workdays className={styles.workdays} workdays={work_days} />
       </div>
     </Card>
-  )
+  );
 }
 
 export default React.memo(CardService);
