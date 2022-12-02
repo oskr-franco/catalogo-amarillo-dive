@@ -1,10 +1,11 @@
 import React from 'react'
+import cx from 'classnames';
 
 import styles from './Pills.module.scss';
 
-function Pills({items}){
+function Pills({className, items}){
   return (
-    <div className={styles.pills}>
+    <div className={cx(styles.pills, className)}>
       {items.map((item)=> (<div className={styles.pill} key={item.id}>{item.name}</div>))}
     </div>
   );

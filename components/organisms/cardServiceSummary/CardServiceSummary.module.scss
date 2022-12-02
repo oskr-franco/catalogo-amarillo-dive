@@ -27,6 +27,11 @@
   justify-content: end;
 }
 
+.pills {
+  width: 80%;
+  flex-wrap: wrap;
+}
+
 .button {
   @include button;
   margin: auto 0 auto auto;

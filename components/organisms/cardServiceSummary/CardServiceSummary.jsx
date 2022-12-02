@@ -4,6 +4,7 @@ import cx from 'classnames';
 import Card from '../../atoms/card/Card';
 import ImageFallback from '../../atoms/imageFallback/ImageFallback';
 import Rating from '../../molecules/rating/Rating';
+import Pills from '../../atoms/pills/Pills';
 
 import styles from './CardServiceSummary.module.scss';
 
@@ -12,6 +13,7 @@ function CardServiceSummary({className, provider}) {
     first_name,
     last_name,
     location,
+    certifications,
     pictures,
     rate,
   } = provider;
@@ -30,6 +32,7 @@ function CardServiceSummary({className, provider}) {
         <Rating className={styles.rate} rate={rate} />
         <strong>{first_name} {last_name}</strong>
         <address>{location}</address>
+        <Pills className={styles.pills} items={certifications} />
         <button className={styles.button} onClick={()=>alert(first_name)} >CONTACT</button>
       </div>
     </Card>
