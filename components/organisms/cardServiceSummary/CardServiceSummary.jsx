@@ -30,7 +30,7 @@ function CardServiceSummary({className, provider}) {
         <Rating className={styles.rate} rate={rate} />
         <strong>{first_name} {last_name}</strong>
         <address>{location}</address>
-        <div className={styles.button}>CONTACT</div>
+        <button className={styles.button} onClick={()=>alert(first_name)} >CONTACT</button>
       </div>
     </Card>
   );

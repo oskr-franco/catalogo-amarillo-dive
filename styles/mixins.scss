@@ -53,10 +53,16 @@
 }
 
 @mixin button() {
+  border: none;
+  cursor: pointer;
   background: $button-color;
   border-radius: 10px;
   color: $white-color;
   padding: 5px 10px;
+
+  &:hover {
+   filter: brightness(0.85);
+  }
 }
 
 
