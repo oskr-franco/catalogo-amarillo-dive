@@ -36,32 +36,34 @@ function ServiceProviders({ data }) {
   }
 
   return(
-    <div className={styles.container}>
-      <button onClick={onClickHandler}>open modal</button>
-      <InfiniteScroll
-        className={styles.infiniteScroll}
-        dataLength={providers.length}
-        next={getMorePost}
-        hasMore={hasMore}
-        loader={<h3> Loading...</h3>}
-      >
-        { providers.map(provider => (
-          <CardServiceSummary
-            key={provider.email}
-            provider={provider}
-            onClickCard={onClickCardHandler}
-          />
-        ))}
-      </InfiniteScroll>
-      {isModalOpen && 
-        <Modal onClose={onClickHandler}>
-          <CardService 
-            key={providerSelected.email} 
-            provider={providerSelected}
-            className={styles.detailedCard} />
-        </Modal>
-      }
-    </div>
+    <>
+      <div className={styles.container}>
+        <button onClick={onClickHandler}>open modal</button>
+        <InfiniteScroll
+          className={styles.infiniteScroll}
+          dataLength={providers.length}
+          next={getMorePost}
+          hasMore={hasMore}
+          loader={<h3> Loading...</h3>}
+        >
+          { providers.map(provider => (
+            <CardServiceSummary
+              key={provider.email}
+              provider={provider}
+              onClickCard={onClickCardHandler}
+            />
+          ))}
+        </InfiniteScroll>
+      </div>
+      <Modal onClose={onClickHandler} isOpen={isModalOpen} >
+      { providerSelected && (
+      <CardService 
+        key={providerSelected.email} 
+        provider={providerSelected}
+        className={styles.detailedCard} />
+      )}
+      </Modal>
+    </>
   )
 }
 
