@@ -38,7 +38,6 @@ function ServiceProviders({ data }) {
   return(
     <>
       <div className={styles.container}>
-        <button onClick={onClickHandler}>open modal</button>
         <InfiniteScroll
           className={styles.infiniteScroll}
           dataLength={providers.length}
