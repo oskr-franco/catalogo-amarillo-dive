@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Card from '../../atoms/card/Card';
 import Pills from '../../atoms/pills/Pills';
 import ImageFallback from '../../atoms/imageFallback/ImageFallback';
 import Stars from '../../atoms/stars/Stars';
@@ -41,7 +40,7 @@ function CardService({
   const legalWorkProof = !!legal_work_proof.lenght ? 'Yes' : 'No';
 
   return (
-    <Card className={cx(styles.card, className)}>
+    <div className={cx(styles.card, className)}>
       <ImageFallback
         className={styles.img}
         src={picture?.url}
@@ -68,7 +67,7 @@ function CardService({
         <Rating rate={rate}/>
         <Workdays className={styles.workdays} workdays={work_days} />
       </div>
-    </Card>
+    </div>
   );
 }
 

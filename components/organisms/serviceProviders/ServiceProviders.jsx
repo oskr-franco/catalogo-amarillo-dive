@@ -2,14 +2,22 @@ import React, { useState } from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import CardServiceSummary from '../../organisms/cardServiceSummary/CardServiceSummary';
+import CardService from '../../organisms/cardService/CardService';
+import Modal from '/components/molecules/modal/Modal';
 
 import styles from './ServiceProviders.module.scss';
 
 function ServiceProviders({ data }) {
   const { providers: serviceProviders, has_more, next_cursor } = data;
   const [providers, setProviders] = useState(serviceProviders);
+  const [providerSelected, setProviderSelected] = useState();
   const [hasMore, setHasMore] = useState(has_more);
   const [nextCursor, setNextCursor] = useState(next_cursor);
+
+  const [isModalOpen, setModal] = useState(false);
+  const onClickHandler = () => {
+    setModal((prev) => !prev);
+  }
 
   const getMorePost = async () => {
     const res = await fetch(
@@ -22,8 +30,14 @@ function ServiceProviders({ data }) {
     setNextCursor(newNextCursor);
   };
 
+  const onClickCardHandler = (provider) => {
+    setProviderSelected(provider);
+    onClickHandler();
+  }
+
   return(
     <div className={styles.container}>
+      <button onClick={onClickHandler}>open modal</button>
       <InfiniteScroll
         className={styles.infiniteScroll}
         dataLength={providers.length}
@@ -35,9 +49,18 @@ function ServiceProviders({ data }) {
           <CardServiceSummary
             key={provider.email}
             provider={provider}
+            onClickCard={onClickCardHandler}
           />
         ))}
       </InfiniteScroll>
+      {isModalOpen && 
+        <Modal onClose={onClickHandler}>
+          <CardService 
+            key={providerSelected.email} 
+            provider={providerSelected}
+            className={styles.detailedCard} />
+        </Modal>
+      }
     </div>
   )
 }

@@ -1,9 +1,11 @@
 @import './mixins.scss';
 
 .card {
+  @include card();
   display: flex;
   flex-direction: row;
   gap: $spacing;
+  cursor: pointer;
 }
 
 .img {

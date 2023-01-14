@@ -12,6 +12,14 @@ a {
   text-decoration: none;
 }
 
+input[type=search] {
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  text-overflow: ellipsis;
+}
+
 * {
   box-sizing: border-box;
 }

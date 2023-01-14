@@ -1,14 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Card from '../../atoms/card/Card';
 import ImageFallback from '../../atoms/imageFallback/ImageFallback';
 import Rating from '../../molecules/rating/Rating';
 import Pills from '../../atoms/pills/Pills';
 
 import styles from './CardServiceSummary.module.scss';
 
-function CardServiceSummary({className, provider}) {
+function CardServiceSummary({ provider, onClickCard, className }) {
   const {
     first_name,
     last_name,
@@ -18,8 +17,18 @@ function CardServiceSummary({className, provider}) {
     rate,
   } = provider;
   const [picture] = pictures;
+
+  function onContactHandler(e) {
+    e.stopPropagation();
+    alert(`${first_name}, onContactHandler`);
+  }
+
+  function onClickCardHandler() {
+    onClickCard(provider);
+  }
+
   return (
-    <Card className={cx(styles.card, className)}>
+    <div className={cx(styles.card, className)} onClick={onClickCardHandler} >
       <ImageFallback
         className={styles.img}
         src={picture?.url}
@@ -33,10 +42,10 @@ function CardServiceSummary({className, provider}) {
         <strong>{first_name} {last_name}</strong>
         <address>{location}</address>
         <Pills className={styles.pills} items={certifications} />
-        <button className={styles.button} onClick={()=>alert(first_name)} >CONTACT</button>
+        <button className={styles.button} onClick={onContactHandler} >CONTACT</button>
       </div>
-    </Card>
+    </div>
   );
 }
 
-export default CardServiceSummary;
+export default React.memo(CardServiceSummary);

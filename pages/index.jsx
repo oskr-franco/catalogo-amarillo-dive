@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { getFreelancers } from './api/freelancer';
 
 import ServiceProviders from '../components/organisms/serviceProviders/ServiceProviders';

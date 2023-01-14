@@ -3,4 +3,23 @@
 .filter {
   height: 200px; 
   background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  height:100%;
+  width: 100%;
+}
+
+.textboxContainer {
+  display: flex;
+  padding: 30px 0;
+}
+
+.textbox {
+  margin: 0 auto;
+  width: 50%;
+  padding: 0 31px;
 }

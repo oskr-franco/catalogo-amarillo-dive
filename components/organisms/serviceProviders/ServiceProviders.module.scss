@@ -18,3 +18,11 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.detailedCard {
+  max-width: 500px;
+
+  @include viewport(desktop) {
+    max-width: 600px;
+  }
+}

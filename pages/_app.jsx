@@ -11,10 +11,10 @@ function MyApp({ Component, pageProps }) {
     <link rel="icon" href="/favicon.ico" />
   </Head>
   return (
-    <>
+    <div style={{position: "relative"}}>
       <Header />
       <Component {...pageProps} />
-    </>
+    </div>
   )
 }
 
