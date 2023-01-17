@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import Store from '../store/Store';
+import ModalWrapper from '../components/molecules/modal/ModalWrapper'
 import Header from '../components/organisms/header/Header'
 
 import '../styles/globals.css'
@@ -12,8 +14,11 @@ function MyApp({ Component, pageProps }) {
   </Head>
   return (
     <div style={{position: "relative"}}>
-      <Header />
-      <Component {...pageProps} />
+      <Store>
+        <Header />
+        <Component {...pageProps} />
+        <ModalWrapper />
+      </Store>
     </div>
   )
 }

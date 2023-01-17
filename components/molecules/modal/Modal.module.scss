@@ -9,21 +9,19 @@
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
-  transition: all .2s ease-out;
+  transition: all .2s ease-in;
 }
 
 .modal {
   width: auto;
   background: white;
-  
   height: auto;
   border-radius: 15px;
   padding: 15px;
   margin: auto;
   position: sticky;
   top:25%;
-
-  @include viewport(desktop) {
+  @include viewport(big-mobile) {
     width: max-content;
   }
 }
