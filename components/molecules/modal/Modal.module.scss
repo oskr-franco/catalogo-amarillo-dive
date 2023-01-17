@@ -21,6 +21,11 @@
   margin: auto;
   position: sticky;
   top:25%;
+
+  visibility: hidden;
+  opacity: 0;
+  // transition: all .2s ease-in;
+
   @include viewport(big-mobile) {
     width: max-content;
   }
@@ -32,6 +37,7 @@
   cursor: pointer;
   width: 20px;
   height: 20px;
+  color: $red-color;
 }
 
 .open {

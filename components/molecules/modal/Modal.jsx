@@ -6,9 +6,10 @@ import styles from './Modal.module.scss';
 
 function Modal({ isOpen, onClose, children, className }) {
   return (
-    <div className={cx(styles.container, {[styles.open]: isOpen},  className,)}>
-      <div className={styles.modal}>
-        {isOpen && <FaRegTimesCircle className={styles.closeBtn} onClick={onClose} />}
+    <div className={cx(styles.container, {[styles.open]: isOpen},  className,)}
+      onClick={onClose}>
+      <div className={cx(styles.modal, {[styles.open]: isOpen})}>
+        <FaRegTimesCircle className={styles.closeBtn} onClick={onClose} />
         {children}
       </div>
     </div>
