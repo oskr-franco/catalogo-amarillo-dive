@@ -31,6 +31,26 @@
   grid-area: primary;
 }
 
+.name {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 42px;
+}
+
+.address {
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.additional {
+  font-size: 20px;
+  line-height: 31px;
+  b{
+    font-weight: 500;
+  }
+}
+
 .secondary {
   align-items: flex-end;
   display: flex;
@@ -38,13 +58,20 @@
   grid-area: secondary;
 }
 
+.rate {
+  font-size: 22px;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
   gap: $spacing;
+  font-size: 24px;
+  font-weight: 300;
 
   .button {
     @include button;
+    padding: 0px 20px;
   }
 
   @include viewport(tablet) {

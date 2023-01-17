@@ -39,8 +39,8 @@ function CardServiceSummary({ provider, onClickCard, className }) {
         objectFit='cover'/>
       <div className={styles.info}>
         <Rating className={styles.rate} rate={rate} />
-        <strong>{first_name} {last_name}</strong>
-        <address>{location}</address>
+        <strong className={styles.name}>{first_name} {last_name}</strong>
+        <address className={styles.address}>{location}</address>
         <Pills className={styles.pills} items={certifications} />
         <button className={styles.button} onClick={onContactHandler} >CONTACT</button>
       </div>

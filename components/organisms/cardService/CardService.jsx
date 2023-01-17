@@ -50,21 +50,21 @@ function CardService({
         height='200'
         objectFit='cover'/>
       <div className={styles.primary}>
-        <strong>{first_name} {last_name}</strong>
-        <address>{location}</address>
+        <strong className={styles.name}>{first_name} {last_name}</strong>
+        <address className={styles.address}>{location}</address>
         <Pills items={certifications} />
-        <div>Languages: {stringLanguages}</div>
-        <div>Additional Services: {additionalService}</div>
-        <div>Insurance: {insurance}</div>
-        <div>Legal Work Proof: {legalWorkProof}</div>
+        <div className={styles.additional}><b>Languages:</b> {stringLanguages}</div>
+        <div className={styles.additional}><b>Additional Services:</b> {additionalService}</div>
+        <div className={styles.additional}><b>Insurance:</b> {insurance}</div>
+        <div className={styles.additional}><b>Legal Work Proof:</b> {legalWorkProof}</div>
         <div className={styles.buttons}>
           <div className={styles.button}>E-MAIL</div>
           <div className={styles.button}>PHONE</div>
         </div>
       </div>
       <div className={styles.secondary}>
-        <Stars rating={rate} />
-        <Rating rate={rate}/>
+        {/* <Stars rating={rate} /> */}
+        <Rating className={styles.rate} rate={rate}/>
         <Workdays className={styles.workdays} workdays={work_days} />
       </div>
     </div>
