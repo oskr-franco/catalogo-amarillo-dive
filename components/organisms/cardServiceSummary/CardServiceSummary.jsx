@@ -4,10 +4,12 @@ import cx from 'classnames';
 import ImageFallback from '../../atoms/imageFallback/ImageFallback';
 import Rating from '../../molecules/rating/Rating';
 import Pills from '../../atoms/pills/Pills';
+import CardService from '/components/organisms/cardService/CardService';
+import { withOpenModal } from '../../../hocs/withOpenModal';
 
 import styles from './CardServiceSummary.module.scss';
 
-function CardServiceSummary({ provider, onClickCard, className }) {
+function CardServiceSummary({ provider, openModal, className }) {
   const {
     first_name,
     last_name,
@@ -24,7 +26,14 @@ function CardServiceSummary({ provider, onClickCard, className }) {
   }
 
   function onClickCardHandler() {
-    onClickCard(provider);
+    const component = CardService;
+    const componentProps = {
+      key: provider.email,
+      provider: provider,
+      className: styles.detailedCard
+    };
+
+    openModal({component, componentProps})
   }
 
   return (
@@ -48,4 +57,4 @@ function CardServiceSummary({ provider, onClickCard, className }) {
   );
 }
 
-export default React.memo(CardServiceSummary);
+export default withOpenModal(CardServiceSummary);

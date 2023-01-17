@@ -1,17 +1,20 @@
+import { useCallback, useMemo } from "react";
 import useStore from "../store/useStore";
 
 function useModal() {
   const type = 'modal';
   const [state, dispatch] = useStore();
-  function openModal(value) {
+
+  const openModal = useCallback((value) => {
     const func = 'openModal';
     dispatch({type, func,value })
-  }
+  }, [dispatch]);
 
-  function closeModal() {
+  const closeModal= useCallback(() => {
     const func = 'closeModal';
     dispatch({type: type, func })
-  }
+  },[dispatch]);
+
   return {
     modalState: state[type],
     openModal,
