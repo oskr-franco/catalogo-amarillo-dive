@@ -1,3 +1,16 @@
+@import './mixins.scss';
+
 .header {
   height: 136px;
+  display: flex;
+  align-items: center;
+  padding: 0 135px;
+}
+
+.button {
+  @include button;
+  margin: auto 0 auto auto;
+  padding: 8px 30px;
+  font-size: 15px;
+  font-weight: 00;
 }

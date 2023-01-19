@@ -3,7 +3,6 @@ import cx from 'classnames';
 
 import Pills from '../../atoms/pills/Pills';
 import ImageFallback from '../../atoms/imageFallback/ImageFallback';
-import Stars from '../../atoms/stars/Stars';
 import Rating from '../../molecules/rating/Rating';
 import Workdays from '../../molecules/workdays/Workdays';
 

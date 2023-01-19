@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   <Head>
     <title>Catalogo Amarillo</title>
     <meta name="description" content="Find the service exactly as you need" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
   </Head>
   return (
     <div style={{position: "relative"}} 
