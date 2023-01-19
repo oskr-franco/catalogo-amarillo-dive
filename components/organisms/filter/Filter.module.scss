@@ -13,6 +13,17 @@
   width: 100%;
 }
 
+.secondRow {
+  gap: 120px;
+  color: white;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .textboxContainer {
   display: flex;
   padding: 30px 0;
